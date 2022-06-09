@@ -88,7 +88,7 @@ cd canvas-lms
 5. Add your email and password for the canvas admin account 
 6. Add an organization's name for canvas
 7. Choose [1] for the collection of usage data
-8. Verify at the end of the script execution, the message "\o/ Success!"
+8. Verify at the end of the script execution, the message "*\o/ Success!*"
 
 
 ## Running Canvas for the first time
