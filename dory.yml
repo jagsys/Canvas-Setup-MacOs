@@ -1,0 +1,23 @@
+dory:
+  dnsmasq:
+    enabled: true
+    domains:           # array of domains that will be resolved to the specified address
+      - domain: docker # you can set '#' for a wilcard
+        address: 127.0.0.1 # return for queries against the domain
+      - domain: box
+        address: 127.0.0.1
+    container_name: dory_dnsmasq
+    port: 53  # port to listen for dns requests on.  must be 53 on linux. can be anything that's open on macos
+    kill_others: ask
+    service_start_delay: 5  # seconds to wait after restarting systemd services
+  nginx_proxy:
+    enabled: true
+    container_name: dory_dinghy_http_proxy
+    https_enabled: true
+    ssl_certs_dir: ''  # leave as empty string to use default certs
+    port: 80       # port 80 is default for http
+    tls_port: 443  # port 443 is default for https
+  resolv:
+    enabled: true
+    nameserver: 127.0.0.1
+    port: 53:53
