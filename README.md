@@ -113,5 +113,11 @@ ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
 ping canvas.docker
 ```
 
-
-
+* Verify if you have these containers running
+* canvas-lms-jobs-1
+* canvas-lms-webpack-1
+* canvas-lms-redis-1
+* canvas-lms-mutagen-1
+* canvas-lms-web-1
+* canvas-lms-postgres-1
+* http-proxy
