@@ -109,7 +109,7 @@ open http://canvas.docker
 
 5. Test functionality
 
-6. Log out, and open a new terminal
+6. Log out
 
 7. Shutdown mutagen-compose from another terminal window
 ```bash
