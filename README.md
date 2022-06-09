@@ -138,11 +138,40 @@ mutagen-compose down
 ```
 # dory
 
-## Install
+Install
 ```bash
 brew install dory
 ```
 
+Download ~/.dory.yml configuration file  
+```bash
+curl https://raw.githubusercontent.com/jagsys/Canvas-Setup-MacOs/main/dory.yml --output ~/.dory.yml
+```
+
+Disable dory's proxy service (canvas comes with its proxy)
+```bash
+cd ~; ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["nginx_proxy"]["enabled"] = false;  File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
+```
+
+Change your dns configuration, to use dory as your dns service
+```bash
+sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 8.8.8.8
+```
+
+## Running dory
+1. Run
+```bash
+dory up
+```
+2. Stop
+```bash
+dory down
+```
+
+Check dory's status
+```bash
+dory status
+```
 
 # Troubleshooting
 
