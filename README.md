@@ -1,4 +1,4 @@
-# Canvas-Setup-MacOs
+# Canvas-LMS Installation Walkthrough on MacOs (Monterey)
 
 # Requirements
 
