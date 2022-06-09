@@ -102,7 +102,7 @@ mutagen-compose up
 ```
 2. Wait until all the compilation processes finish (be patience...)
 
-3. Open canvas in your browser
+3. Open canvas from another terminal window
 ```bash
 open http://canvas.docker
 ```
