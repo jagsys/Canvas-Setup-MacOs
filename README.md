@@ -136,6 +136,12 @@ mutagen-compose up -d
 cd ~/workspace/canvas-lms
 mutagen-compose down 
 ```
+# dory
+
+## Install
+```bash
+brew install dory
+```
 
 
 # Troubleshooting
