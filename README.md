@@ -93,11 +93,48 @@ cd canvas-lms
 
 ## Running Canvas for the first time
 
-Run
+1. Run
 ```bash
+cd ~/workspace/canvas-lms
 mutagen-compose up
 ```
-Wait until all the compilation processes finish (be patience...)
+2. Wait until all the compilation processes finish (be patience...)
+
+3. Open canvas in your browser
+```bash
+open http://canvas.docker
+```
+
+4. Sign in with your admin credentials
+
+5. Test functionality
+
+6. Log out, and open a new terminal
+
+7. Shutdown mutagen-compose from another terminal window
+```bash
+cd ~/workspace/canvas-lms
+mutagen-compose down
+```
+
+## Running Canvas
+
+**Tip:** to skip webpacker for compiling assets in every run, comment out: "__command: yarn run webpack__" in docker-compose.override.yml 
+```bash
+sed -i '' 's/command\:\ yarn\ run\ webpack/\#command\:\ yarn\ run\ webpack/' ~/workspace/canvas-lms/docker-compose.override.yml
+```
+
+1. Run
+```bash
+cd ~/workspace/canvas-lms
+mutagen-compose up -d
+```
+2. Stop
+```bash
+cd ~/workspace/canvas-lms
+mutagen-compose down 
+```
+
 
 # Troubleshooting
 
