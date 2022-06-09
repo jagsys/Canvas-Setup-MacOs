@@ -82,12 +82,13 @@ cd canvas-lms
 ```
 ### During the script execution:
 1. Provide your mac's password when asked (one time)
-2. Press [y] to copy all the yml files from ./docker-compose/config to ./config (be patience...)
-3. Write _DROP_ when asked what to do with the current database
-4. Add your email and password for the canvas admin account 
-5. Add an organization's name for canvas
-6. Choose [1] for the collection of usage data
-
+2. Press [y] to copy all the yml files from ./docker-compose/config to ./config 
+3. Be patience...
+4. Write _DROP_ when asked what to do with the current database
+5. Add your email and password for the canvas admin account 
+6. Add an organization's name for canvas
+7. Choose [1] for the collection of usage data
+8. Verify at the end of the script execution, the message "\o/ Success!"
 
 
 ## Running Canvas for the first time
