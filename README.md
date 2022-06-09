@@ -85,7 +85,7 @@ cd canvas-lms
 2. Press [y] to copy all the yml files from ./docker-compose/config to ./config (be patience...)
 3. Write _DROP_ when asked what to do with the current database
 4. Add your email and password for the canvas admin account 
-5. Add an organization's name for the canvas
+5. Add an organization's name for canvas
 6. Choose [1] for the collection of usage data
 
 
