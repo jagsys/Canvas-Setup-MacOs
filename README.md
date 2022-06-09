@@ -1,5 +1,7 @@
 # Canvas-LMS Installation Walkthrough on MacOs (Monterey)
 
+This guide contains detailed instructions for the installation and configuration of [Canvas-LMS](https://github.com/instructure/canvas-lms) on a macOS Monterey system. Also, you can find some information that can be used for troubleshooting.
+
 # Requirements
 
 ## Xcode 
