@@ -81,7 +81,7 @@ cd canvas-lms
 ./script/docker_dev_setup.sh
 ```
 ### During the script execution:
-1. Provide your mac's password when asked
+1. Provide your mac's password when asked (one time)
 2. Press [y] to copy all the yml files from ./docker-compose/config to ./config (be patience...)
 3. Write _DROP_ when asked what to do with the current database
 4. Add your email and password for the canvas admin account 
