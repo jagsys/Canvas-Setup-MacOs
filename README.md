@@ -85,8 +85,8 @@ cd canvas-lms
 2. Press [y] to copy all the yml files from ./docker-compose/config to ./config 
 3. Be patience...
 4. Write _DROP_ when asked what to do with the current database
-5. Add your email and password for the canvas admin account 
-6. Add an organization's name for canvas
+5. Type your email and password for the canvas admin account 
+6. Type an organization's name for canvas
 7. Choose [1] for the collection of usage data
 8. Verify at the end of the script execution, the message "*\o/ Success!*"
 
@@ -151,7 +151,7 @@ ping canvas.docker
 ```
 ## Containers
 
-Verify if you have these containers running
+After "mutagen-compose up" command execution, verify if you have these containers running
  * canvas-lms-jobs-1
  * canvas-lms-webpack-1
  * canvas-lms-redis-1
@@ -161,5 +161,8 @@ Verify if you have these containers running
  * http-proxy
 
 ```bash
+cd ~/workspace/canvas-lms
+mutagen-compose up -d
+sleep 30
 docker inspect --format '{{.Name}}' $(docker ps -q)
 ```
