@@ -99,7 +99,7 @@ mutagen-compose up
 ```
 Wait until all the compilation processes finish (be patience...)
 
-# Trouble shotting 
+# Troubleshooting
 
 ## IP aliases 
 
@@ -112,12 +112,17 @@ ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
 ```bash
 ping canvas.docker
 ```
+## Containers
 
-* Verify if you have these containers running
-* canvas-lms-jobs-1
-* canvas-lms-webpack-1
-* canvas-lms-redis-1
-* canvas-lms-mutagen-1
-* canvas-lms-web-1
-* canvas-lms-postgres-1
-* http-proxy
+Verify if you have these containers running
+ * canvas-lms-jobs-1
+ * canvas-lms-webpack-1
+ * canvas-lms-redis-1
+ * canvas-lms-mutagen-1
+ * canvas-lms-web-1
+ * canvas-lms-postgres-1
+ * http-proxy
+
+```bash
+docker inspect --format '{{.Name}}' $(docker ps -q)
+```
