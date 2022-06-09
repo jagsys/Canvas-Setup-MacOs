@@ -74,18 +74,18 @@ brew install mutagen-io/mutagen/mutagen mutagen-io/mutagen/mutagen-compose
 
 ## Instalation
 
-Create a code workspace where you’ll place the application repositories
+1. Create a code workspace where you’ll place the application repositories
 ```bash
 mkdir ~/workspace
 cd ~/workspace
 ```
 
-Pull the repository
+2. Pull the repository
 ```bash
 git clone https://github.com/instructure/canvas-lms.git
 ```
 
-Run the script to set up a development environment with Docker automatically.
+3. Run the script to set up a development environment with Docker automatically.
 ```bash
 cd canvas-lms
 ./script/docker_dev_setup.sh
@@ -145,22 +145,22 @@ mutagen-compose down
 <a name="dory_install"></a>
 # dory
 
-Install
+1. Install
 ```bash
 brew install dory
 ```
 
-Download ~/.dory.yml configuration file  
+2. Download ~/.dory.yml configuration file  
 ```bash
 curl https://raw.githubusercontent.com/jagsys/Canvas-Setup-MacOs/main/dory.yml --output ~/.dory.yml
 ```
 
-Disable dory's proxy service (canvas comes with its proxy)
+3. Disable dory's proxy service (canvas comes with its proxy)
 ```bash
 cd ~; ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["nginx_proxy"]["enabled"] = false;  File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
 ```
 
-Change your dns configuration, to use dory as your dns service
+4. Change your dns configuration, to use dory as your dns service
 ```bash
 sudo networksetup -setdnsservers Wi-Fi 127.0.0.1 8.8.8.8
 ```
