@@ -102,10 +102,7 @@ mutagen-compose up
 ```
 2. Wait until all the compilation processes finish (be patience...)
 
-3. Open canvas from another terminal window
-```bash
-open http://canvas.docker
-```
+3. Open http://canvas.docker
 
 4. Sign in with your admin credentials
 
@@ -125,17 +122,19 @@ mutagen-compose down
 ```bash
 sed -i '' 's/command\:\ yarn\ run\ webpack/\#command\:\ yarn\ run\ webpack/' ~/workspace/canvas-lms/docker-compose.override.yml
 ```
-
-1. Run
+<a name="run_canvas"></a>
+1. Run 
 ```bash
 cd ~/workspace/canvas-lms
 mutagen-compose up -d
 ```
+<a name="stop_canvas"></a>
 2. Stop
 ```bash
 cd ~/workspace/canvas-lms
 mutagen-compose down 
 ```
+<a name="dory_install"></a>
 # dory
 
 Install
@@ -172,6 +171,26 @@ Check dory's status
 ```bash
 dory status
 ```
+
+# Moving from _canvas.docker_ to _canvas.box_
+
+To use some of google's services, canvas virtual host must have a three letters domain suffix. In this case, it's necessary to change our virtual host from canvas.docker to canvas.box ([requires dory](#dory_install))
+
+1. [Stop canvas](#stop_canvas)
+
+2. Replace "canvas.docker" with "canvas.box" in file: ~/workspace/canvas-lms/docker-compose.override.yml 
+```bash
+sed -i '' 's/\.canvas\.docker/\.canvas\.box/' ~/workspace/canvas-lms/docker-compose.override.yml
+```
+
+3. Replace "canvas.docker" with "canvas.box" in file: ~/workspace/canvas-lms/config/domain.yml
+```bash
+sed -i '' 's/\canvas\.docker/\canvas\.box/' ~/workspace/canvas-lms/config/domain.yml
+```
+4. [Run canvas](#run_canvas)
+
+5. Open [http://canvas.box](http://canvas.box)
+
 
 # Troubleshooting
 
