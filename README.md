@@ -230,3 +230,8 @@ mutagen-compose up -d
 sleep 30
 docker inspect --format '{{.Name}}' $(docker ps -q)
 ```
+## Unexpected erros while git cloning
+This kind of error could be soveld by raising the postBuffer size
+```bash
+git config --global http.postBuffer 1048576000
+```
