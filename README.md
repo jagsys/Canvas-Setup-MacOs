@@ -249,3 +249,15 @@ This kind of error could be soveld by raising the postBuffer size
 ```bash
 git config --global http.postBuffer 1048576000
 ```
+
+## Expose docker port
+To test locally any service you can export docker ports adding these lines in the service section of your docker-compose.override.yml, :
+```bash
+    ports:
+      - "[Local_Port]:[Docker_Port]"
+```
+
+To check if port is open you can run:
+```bash
+nc -zv 127.0.0.1 [Local_Port]
+```
