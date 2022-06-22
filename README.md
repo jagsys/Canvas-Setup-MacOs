@@ -6,7 +6,7 @@ This guide contains detailed instructions for the installation and configuration
 
 ## Port 80 Availability Check 
 
-Canvas uses standard port 80 for HTTP. Before installation is highly recommended to verify that no other processes are listening on port 80.
+Dory uses standard port 80 for HTTP. Before installation is highly recommended to verify that no other processes are listening on port 80.
 
 ```bash
 lsof -nP -iTCP -sTCP:LISTEN | grep 80 | awk '{print $2}' | xargs -L1 -I{} ps -f {}
