@@ -261,3 +261,8 @@ To check if port is open you can run:
 ```bash
 nc -zv 127.0.0.1 [Local_Port]
 ```
+To interact with canvas-lms-web docker
+```bash
+docker exec -it canvas-lms-web-1 /bin/bash
+```
+## Generate SSl Certs for dory 
