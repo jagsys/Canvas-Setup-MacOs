@@ -103,10 +103,10 @@ cd canvas-lms
 ## Registering other services in http proxy
 
 Add the following service name's list in docker-compose.yml, inside section: services->web->external_links
-* dinghy_http_proxy:google-drive-lti.box
-* dinghy_http_proxy:rollcall.docker
-* dinghy_http_proxy:canvadocs.docker
-* dinghy_http_proxy:office365.docker
+* dory_dinghy_http_proxy:google-drive-lti.box
+* dory_dinghy_http_proxy:rollcall.docker
+* dory_dinghy_http_proxy:canvadocs.docker
+* dory_dinghy_http_proxy:office365.docker
 
 ```bash
 cd ~/workspace/canvas-lms/; ruby -e 'require "yaml"; data = YAML.load_file "docker-compose.yml"; data["services"]["web"]["external_links"] = ["dory_dinghy_http_proxy:google-drive-lti.box","dory_dinghy_http_proxy:rollcall.docker","dory_dinghy_http_proxy:canvadocs.docker","dory_dinghy_http_proxy:office365.docker"];  File.open("docker-compose.yml", "w") { |f| YAML.dump(data, f) }'
