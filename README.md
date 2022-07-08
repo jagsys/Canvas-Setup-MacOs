@@ -223,9 +223,9 @@ sed -i '' 's/\canvas\.docker/\canvas\.box/' ~/workspace/canvas-lms/config/domain
 ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'
 ```
 
-* Verify if you receive a response when pinging to _canvas.docker_
+* Verify if you receive a response when pinging to _canvas.box_
 ```bash
-ping canvas.docker
+ping canvas.box
 ```
 ## Containers
 
