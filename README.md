@@ -265,4 +265,5 @@ To interact with canvas-lms-web docker
 ```bash
 docker exec -it canvas-lms-web-1 /bin/bash
 ```
-## Generate SSl Certs for dory 
+## Generate SSL Certs for dory 
+...
