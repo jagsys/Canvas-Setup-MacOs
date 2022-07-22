@@ -265,5 +265,17 @@ To interact with canvas-lms-web docker
 ```bash
 docker exec -it canvas-lms-web-1 /bin/bash
 ```
+To remove all docker images
+```bash
+docker stop $(docker ps -a -q)
+docker rmi -f $(docker images -aq)
+docker volume ls -f dangling=true
+
+```
+To remove images without at least one container associated 
+```bash
+docker image prune -a
+```
+
 ## Generate SSL Certs for dory 
 ...
