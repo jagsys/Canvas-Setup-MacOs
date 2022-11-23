@@ -52,6 +52,7 @@ brew doctor
 
 * [Intel chip](https://desktop.docker.com/mac/main/amd64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-mac-amd64)
 
+* [Apple chip](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module)
 2. Double-click Docker.dmg to open the installer, then drag the Docker icon to the Applications folder.
 
 3. Double-click Docker. app in the Applications folder to start Docker
