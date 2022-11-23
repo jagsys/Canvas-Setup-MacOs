@@ -112,7 +112,15 @@ Add the following service name's list in docker-compose.yml, inside section: ser
 ```bash
 cd ~/workspace/canvas-lms/; ruby -e 'require "yaml"; data = YAML.load_file "docker-compose.yml"; data["services"]["web"]["external_links"] = ["dory_dinghy_http_proxy:google-drive-lti.box","dory_dinghy_http_proxy:rollcall.docker","dory_dinghy_http_proxy:canvadocs.docker","dory_dinghy_http_proxy:office365.docker"];  File.open("docker-compose.yml", "w") { |f| YAML.dump(data, f) }'
 ```
+## Dory on M1
+Add the supported images on your ~/.dory.yml
+* image: tripox/dory-dnsmasq:latest
+* image: tripox/dory-http-proxy:latest
 
+Or run the following script in your home folder
+```bash
+ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["dnsmasq"]["image"] = "tripox/dory-dnsmasq:latest"; data["dory"]["nginx_proxy"]["image"] = "tripox/dory-http-proxy:latest";File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
+```
 
 ## Running Canvas for the first time
 
@@ -170,10 +178,21 @@ brew install dory
 curl https://raw.githubusercontent.com/jagsys/Canvas-Setup-MacOs/main/dory.yml --output ~/.dory.yml
 ```
 
+### M1 dory images
+
+On M1 add this images to your services on your ~/.dory.yml or run the following script
+* image: tripox/dory-dnsmasq:latest
+* image: tripox/dory-http-proxy:latest
+```bash
+ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["dnsmasq"]["image"] = "tripox/dory-dnsmasq:latest"; data["dory"]["nginx_proxy"]["image"] = "tripox/dory-http-proxy:latest";File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
+```
+
+
 3. [Dont Do it !!! We work with dory's proxy ;) ]Disable dory's proxy service (canvas comes with its proxy)
 ```bash
 cd ~; ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["nginx_proxy"]["enabled"] = false;  File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
 ```
+
 
 4. Change your dns configuration, to use dory as your dns service
 ```bash
