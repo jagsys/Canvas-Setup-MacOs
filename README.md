@@ -282,7 +282,7 @@ docker image prune -a
 ...
 
 
-###Clean DNS Cache
+### Clean DNS Cache
 ```
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder.
 ```
