@@ -280,3 +280,13 @@ docker image prune -a
 
 ## Generate SSL Certs for dory 
 ...
+
+
+###Clean DNS Cache
+```
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder.
+```
+### Check DNS servers configured
+```
+networksetup -setdnsservers Wi-Fi
+```
