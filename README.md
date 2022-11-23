@@ -65,7 +65,7 @@ brew doctor
   * 8 GB of memory 
   * 150 GB of Disk image size
 
-## Mutagen
+## [Discontinued] Mutagen
 
 Install
 ```bash
