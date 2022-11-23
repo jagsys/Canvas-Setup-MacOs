@@ -170,7 +170,7 @@ brew install dory
 curl https://raw.githubusercontent.com/jagsys/Canvas-Setup-MacOs/main/dory.yml --output ~/.dory.yml
 ```
 
-3. Disable dory's proxy service (canvas comes with its proxy)
+3. [Dont Do it !!! We work with dory's proxy ;) ]Disable dory's proxy service (canvas comes with its proxy)
 ```bash
 cd ~; ruby -e 'require "yaml"; data = YAML.load_file ".dory.yml"; data["dory"]["nginx_proxy"]["enabled"] = false;  File.open(".dory.yml", "w") { |f| YAML.dump(data, f) }'
 ```
