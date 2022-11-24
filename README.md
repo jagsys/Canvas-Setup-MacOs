@@ -118,7 +118,7 @@ cd ~/workspace/canvas-lms/; ruby -e 'require "yaml"; data = YAML.load_file "dock
 1. Run
 ```bash
 cd ~/workspace/canvas-lms
-mutagen-compose up
+docker compouse up
 ```
 2. Wait until all the compilation processes finish (be patience...)
 
@@ -133,7 +133,7 @@ mutagen-compose up
 7. Shutdown mutagen-compose from another terminal window
 ```bash
 cd ~/workspace/canvas-lms
-mutagen-compose down
+docker compose down
 ```
 
 ## Running Canvas
