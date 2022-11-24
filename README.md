@@ -298,8 +298,55 @@ docker image prune -a
 ```
 
 ## Generate SSL Certs for dory 
-...
+Dory can only use one cert by time. It must be default.crt To generate a wilcard cert *.box follow this steps in your ~./dory/certs folder
 
+1. Create the CA Private Key (Set the password)
+```bash
+openssl genrsa -des3 -out CAPrivate.key 2048
+```
+2. Generate the CA Root certificate (Enter your password, and could use common name = *.box)
+```bash
+openssl req -x509 -new -nodes -key CAPrivate.key -sha256 -days 3650 -out CAPrivate.box.pem
+```
+3. Create a Private Key
+```bash
+openssl genrsa -out default.key 2048
+```
+
+4. Generate the CSR (common name = *.box)
+```bash
+openssl req -new -key default.key -out BoxRequest.csr
+```
+5. Save this in your box.cnf
+```bash
+vim box.cnf
+```
+```
+basicConstraints=CA:FALSE
+subjectAltName=DNS:*.box
+extendedKeyUsage=serverAuth
+```
+6. Generate your cert
+```bash
+openssl x509 -req -in BoxRequest.csr -CA CAPrivate.box.pem -CAkey CAPrivate.key -CAcreateserial -extfile box.cnf -out default.crt -days 3650 -sha256
+```
+7. Open your cert in your keychain and chose "Always trust"
+```bash
+open default.crt
+```
+8. Restart dory
+```bash
+dory restart
+```
+9. Test Certs
+```bash
+9 Test
+openssl x509 -in default.crt -text -noout
+openssl rsa -in default.key -check
+
+openssl x509 -noout -modulus -in default.crt | openssl md5
+openssl rsa -noout -modulus -in default.key| openssl md5
+```
 
 ### Clean DNS Cache
 ```
