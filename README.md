@@ -118,7 +118,7 @@ cd ~/workspace/canvas-lms/; ruby -e 'require "yaml"; data = YAML.load_file "dock
 1. Run
 ```bash
 cd ~/workspace/canvas-lms
-docker compouse up
+docker compose up
 ```
 2. Wait until all the compilation processes finish (be patience...)
 
@@ -146,13 +146,13 @@ sed -i '' 's/command\:\ yarn\ run\ webpack/\#command\:\ yarn\ run\ webpack/' ~/w
 1. Run 
 ```bash
 cd ~/workspace/canvas-lms
-mutagen-compose up -d
+docker compose up -d
 ```
 <a name="stop_canvas"></a>
 2. Stop
 ```bash
 cd ~/workspace/canvas-lms
-mutagen-compose down 
+docker compose down 
 ```
 
 
