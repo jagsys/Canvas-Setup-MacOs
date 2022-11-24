@@ -222,7 +222,34 @@ sed -i '' 's/\canvas\.docker/\canvas\.box/' ~/workspace/canvas-lms/config/domain
 ```
 4. [Run canvas](#run_canvas)
 
-5. Open [http://canvas.box](http://canvas.box)
+5. Restart dory
+```bash
+dory restart
+```
+6. Open [http://canvas.box](http://canvas.box)
+
+# Moving from _canvas.box_ to _canvas.docker_
+
+To use some of google's services, canvas virtual host must have a three letters domain suffix. In this case, it's necessary to change our virtual host from canvas.docker to canvas.box ([requires dory](#dory_install))
+
+1. [Stop canvas](#stop_canvas)
+
+2. Replace "canvas.docker" with "canvas.box" in file: ~/workspace/canvas-lms/docker-compose.override.yml 
+```bash
+sed -i '' 's/\.canvas\.box/\.canvas\.docker/' ~/workspace/canvas-lms/docker-compose.override.yml
+```
+
+3. Replace "canvas.docker" with "canvas.box" in file: ~/workspace/canvas-lms/config/domain.yml
+```bash
+sed -i '' 's/\canvas\.box/\canvas\.docker/' ~/workspace/canvas-lms/config/domain.yml
+```
+4. [Run canvas](#run_canvas)
+
+5. Restart dory
+```bash
+dory restart
+```
+6. Open [http://canvas.docker](http://canvas.docker)
 
 
 # Troubleshooting
@@ -240,7 +267,7 @@ ping canvas.box
 ```
 ## Containers
 
-After "mutagen-compose up" command execution, verify if you have these containers running
+After "docker compose up" command execution, verify if you have these containers running
  * canvas-lms-jobs-1
  * canvas-lms-webpack-1
  * canvas-lms-redis-1
@@ -251,7 +278,7 @@ After "mutagen-compose up" command execution, verify if you have these container
 
 ```bash
 cd ~/workspace/canvas-lms
-mutagen-compose up -d
+docker compose up -d
 sleep 30
 docker inspect --format '{{.Name}}' $(docker ps -q)
 ```
